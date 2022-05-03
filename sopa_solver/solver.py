@@ -38,12 +38,9 @@ class SopaSolver:
 
         for line in self.sopa_word.matrix:
             start_col_idxs = find_char(word[0], line)
-            end_col_index = find_char(word[-1], line)
             if len(start_col_idxs) > 0:
                 for i in start_col_idxs:
-                    # print(f"START {row},{i} ")
-                    isFound = search(word, 0, row, i, self.sopa_word)
-                    if isFound:
+                    if search(word, 0, row, i, self.sopa_word):
                         return True
             row += 1
         return False
