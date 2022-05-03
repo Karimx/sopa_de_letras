@@ -1,6 +1,6 @@
 from enum import Enum
 
-from .loader import from_array, from_file
-from .solver import Sopa, SopaSolver
+from sopa_solver.loader import from_array, from_file, read_to_find
+from sopa_solver.solver import Sopa, SopaSolver
 
-__all__ = [SopaSolver, Sopa, from_array, from_file]
+__all__ = ['SopaSolver', 'Sopa', 'from_array', 'from_file', 'read_to_find']

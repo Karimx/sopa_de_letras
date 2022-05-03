@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Optional
 
-from sopa_solver import Sopa
+from sopa_solver.sopa import Sopa
 
 
 def from_file(sopa_promblem: Path) -> Optional[Sopa]:

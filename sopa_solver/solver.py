@@ -80,7 +80,6 @@ def find_char(ch: str, line) -> list:
 def get_match_index(word, line) -> Iterable:
     matches = []
     for i, w in enumerate(word):
-        # search
         for l in line:
             if w == l:
                 matches.append(i)
@@ -100,7 +99,6 @@ def search(word, index, row, col, soup_map: Sopa) -> bool:
     Returns: If word ins in lettter soup.
 
     """
-    # found = True
     if index == len(word) - 1:
         return True
     else:
@@ -109,11 +107,7 @@ def search(word, index, row, col, soup_map: Sopa) -> bool:
             new_y = row + movement_y[m]
             if is_valid(new_x, new_y, word[index + 1], soup_map):
                 if found := search(word, index + 1, new_y, new_x, soup_map):
-                    # print(f"{new_y},{new_x} {word[index + 1]} ")
                     return found
-                else:
-                    continue
-
     return False
 
 

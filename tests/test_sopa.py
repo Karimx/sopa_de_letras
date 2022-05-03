@@ -1,5 +1,6 @@
 from sopa_solver import SopaSolver, loader
 
+
 ciertas = [
     "COW",
     "TIBURÓN",
