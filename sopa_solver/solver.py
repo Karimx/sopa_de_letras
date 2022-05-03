@@ -98,17 +98,28 @@ def search(word, index, row, col, soup_map: Sopa) -> bool:
     """
     if index == len(word) - 1:
         return True
-    else:
-        for m in range(len(movement_x)):
-            new_x = col + movement_x[m]
-            new_y = row + movement_y[m]
-            if is_valid(new_x, new_y, word[index + 1], soup_map):
-                if found := search(word, index + 1, new_y, new_x, soup_map):
-                    return found
+
+    for m in range(len(movement_x)):
+        new_x = col + movement_x[m]
+        new_y = row + movement_y[m]
+        if is_valid(new_x, new_y, word[index + 1], soup_map):
+            if search(word, index + 1, new_y, new_x, soup_map):
+                return True
     return False
 
 
 def is_valid(x, y, ch, soup_map: Sopa) -> bool:
+    """
+
+    Args:
+        x: col
+        y: row
+        ch: character to find
+        soup_map: Soop map where to find
+
+    Returns:
+
+    """
     if x < 0 or x >= soup_map.width:
         return False
     if y < 0 or y >= soup_map.height:

@@ -1,3 +1,5 @@
+import pytest
+
 from sopa_solver import SopaSolver, loader
 
 
@@ -37,7 +39,14 @@ sopa = [
 ]
 
 
-def test_correct():
+def sopa_solver():
+    sopa_solver = SopaSolver()
+    sopa_solver.set_sopa(loader.from_array(sopa))
+    return sopa_solver
+
+@pytest.param
+def test_correct(sopa_solver):
+
     sopa_solver = SopaSolver()
     sopa_solver.set_sopa(loader.from_array(sopa))
     for c in ciertas:
